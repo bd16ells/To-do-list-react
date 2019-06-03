@@ -16,9 +16,11 @@ export default class Form extends Component {
     })
   }
 
-  submit = () => {
+  submit = e => {
+    // click or enter
+    e.preventDefault()
     if (this.state.item !== "") {
-      // meaning it's an edit
+      // meaning it's an edit, there was preexisting value
       if (this.initialState.item !== "") {
         this.props.updateTask(this.initialState.item, this.state)
       } else {
@@ -32,9 +34,9 @@ export default class Form extends Component {
     const {item} = this.state;
     return (
       <div style={{width: '400px'}}>
-        <form>
+        <form onSubmit={this.submit}>
           <input type="text" placeholder="To do" name="item" style = {{width: '235px'}} value={item} onChange={this.handleChange} />
-          <input type="button" className="addButton" value="Submit" onClick={this.submit} />
+          <input type="button" className="addButton" value="Submit" />
         </form>
       </div>
     )

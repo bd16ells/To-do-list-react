@@ -19,12 +19,12 @@ const List = props => {
   const rows = props.tasks.map((row, index) => {
     return (
       <li key={index}>
-      <div className={'task-container'}>
-        <label className={(row.complete ? 'task-complete' : '')}>{row.item}
-          <input type="checkbox" checked={row.complete} onChange={() => props.toggleComplete(row)}/>
-          <span className="checkmark" />
-        </label>
-      </div>
+        <div className={'task-container'}>
+          <label className={(row.complete ? 'task-complete' : '')}>{row.item}
+            <input type="checkbox" checked={row.complete} onChange={() => props.toggleComplete(row)}/>
+            <span className="checkmark" />
+          </label>
+        </div>
         <div style={{float: 'right'}}>
           <span className="delete" onClick={() => props.removeTask(index)}>Delete</span>
           <span className="bar">&nbsp;|&nbsp;</span>
@@ -39,7 +39,7 @@ const List = props => {
                     &times;
                   </a>
                 </div>
-                <Form task={row} handleSubmit={props.handleSubmit} updateTask={props.updateTask} onClick={close} />
+                <Form task={row} updateTask={props.updateTask} />
               </div>
             )}
           </Popup>
