@@ -36,7 +36,7 @@ export default class Form extends Component {
       <div style={{width: '400px'}}>
         <form onSubmit={this.submit}>
           <input type="text" placeholder="To do" name="item" style = {{width: '235px'}} value={item} onChange={this.handleChange} />
-          <input type="button" className="addButton" value="Submit" />
+          <input type="button" className="addButton" value="Submit" onClick={this.submit}/>
         </form>
       </div>
     )
