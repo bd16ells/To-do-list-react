@@ -1,2 +1,9 @@
-# To-do-list-react
-Simple todo list built using React
+# Getting Started
+```bash
+npm install
+```
+
+```bash
+npm start
+```
+Navigate to localhost:3000
